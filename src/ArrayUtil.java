@@ -1,6 +1,12 @@
 /**
  * ArrayUtil exercises.
  */
+
+
+import java.util.ArrayList;
+import java.util.HashSet;
+import java.util.List;
+
 public class ArrayUtil {
 
     /**
@@ -11,7 +17,16 @@ public class ArrayUtil {
      * @return String array with common elements
      */
     public static String[] findCommon(String[] array1, String[] array2) {
-        // TODO fill in code here
-        return new String[0];
+        //  fill in code here
+        List<String> result = new ArrayList<>();
+        for (int i = 0; i < array1.length; i++) {
+            for (int j = 0; j < array2.length; j++) {
+                if(array1[i].equals(array2[j])) {
+                    result.add(array1[i]);
+                }
+            }
+        }
+
+        return result.toArray(new String[0]);
     }
 }
